@@ -1,11 +1,149 @@
-/* 
+:root {
+  --color-simpson-yellow: #FED90F;
+  --color-marge-blue: #009DDC;
+  --color-light-bg: #FDFDFD;
+  --color-dark-text: #2c2c2c;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
 
-*/
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--color-light-bg);
+  color: var(--color-dark-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
+  color: var(--color-dark-text);
+  font-weight: normal;
+}
+
+a {
+  color: var(--color-marge-blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #007bb4;
+}
+
+.main-content {
+  padding-top: 6rem; 
+  padding-bottom: 4rem;
+}
+
+/* Barra de Navegación */
+.navbar {
+  background-color: var(--color-marge-blue);
+  border-bottom: 4px solid var(--color-dark-text);
+  background-image: none;
+  padding: 0.5rem 1rem;
+}
+.navbar-brand {
+    font-size: 2.5rem !important;
+    color: var(--color-simpson-yellow) !important;
+}
+/* Estilos para los enlaces del navbar */
+.navbar .nav-link {
+  color: white;
+  font-weight: 600;
+}
+.navbar .nav-link:hover {
+  color: var(--color-simpson-yellow);
+}
+
+
+/* Jumbotron */
+.jumbotron-bg {
+    border: 3px solid var(--color-dark-text);
+    border-radius: 25px; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+/* Capa de brillo sobre el Jumbotron css-tricks fuente */
+.jumbotron-bg::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 200%;
+  height: 200%;
+  opacity: 0;
+  transform: rotate(30deg);
+  background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0.13) 0%,
+    rgba(255, 255, 255, 0.13) 77%,
+    rgba(255, 255, 255, 0.5) 92%,
+    rgba(255, 255, 255, 0.0) 100%
+  );
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
+.jumbotron-bg:hover::after {
+  opacity: 1;
+}
+
+/* Tarjetas */
+.card {
+  border: 3px solid var(--color-dark-text);
+  border-radius: 8px;
+  box-shadow: none;
+  transition: border-color 0.2s ease-in-out;
+  background-color: white;
+}
+.card:hover {
+  border-color: var(--color-marge-blue);
+  transform: none;
+}
+.card .card-img-container {
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+  background-color: #f0f0f0;
+  border-bottom: 3px solid var(--color-dark-text);
+}
+.card .card-img-container img {
+  width: 100%; height: 100%; object-fit: cover; object-position: top;
+}
+
+/* Botón Primario */
+.btn-primary {
+  background-color: var(--color-simpson-yellow);
+  border: 2px solid var(--color-dark-text);
+  border-radius: 8px;
+  color: var(--color-dark-text);
+  font-weight: 700;
+  box-shadow: 0 4px var(--color-dark-text);
+  transition: all 0.1s ease-in-out;
+}
+.btn-primary:hover {
+  background-color: #FFC700;
+  border-color: var(--color-dark-text);
+  color: var(--color-dark-text);
+}
+.btn-primary:active {
+  box-shadow: 0 0 var(--color-dark-text);
+  transform: translateY(4px);
+}
+
+/* Pie de Página */
+footer {
+  background-color: var(--color-marge-blue);
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+footer a {
+  color: var(--color-simpson-yellow);
+}
+footer a:hover {
+  color: white;
+}
+
+/* Para este proyecto he leido documentación de https://css-tricks.com/ */
